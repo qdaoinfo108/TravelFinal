@@ -90,9 +90,11 @@ public class Location_fragment extends Fragment {
                             try {
                                 JSONObject jsonObject = response.getJSONObject(i);
                                 Location location;
-                                location = new Location(jsonObject.getString("TITLE"),
+                                location = new Location(jsonObject.getString("THANHPHO"),
                                         jsonObject.getString("HINHANH"),
-                                        jsonObject.getString("DIACHI"));
+                                        jsonObject.getString("TITLE"),
+                                        jsonObject.getString("DIACHI"),
+                                        jsonObject.getString("CONTENT"));
                                 listItem.add(location);
                             }
                             catch (JSONException e) {

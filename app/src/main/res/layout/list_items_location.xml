@@ -19,6 +19,7 @@
             android:scaleType="centerCrop"
             android:src="@drawable/png_phone" />
 
+
         <TextView
             android:id="@+id/l_title"
             android:layout_width="wrap_content"
@@ -31,12 +32,21 @@
             android:textSize="@dimen/sizeTitle"
             android:textStyle="bold"
              />
-
+        <TextView
+            android:id="@+id/l_city"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="đoạn text 1"
+            android:layout_below="@id/l_title"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@id/l_image"
+            android:textSize="@dimen/sizeAdress"
+            android:layout_toRightOf="@id/l_image" />
         <TextView
             android:id="@+id/l_content"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/l_title"
+            android:layout_below="@+id/l_city"
             android:layout_toEndOf="@id/l_image"
             android:layout_toRightOf="@id/l_image"
             android:layout_marginLeft="15dp"

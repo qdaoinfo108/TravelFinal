@@ -43,7 +43,7 @@ public class LocationAdapter extends BaseAdapter {
     }
 
     private class ViewHolder{
-        TextView txt1,txt2;
+        TextView txt1,txt2,txt3,txt4;
         ImageView img1;
     }
 
@@ -57,6 +57,9 @@ public class LocationAdapter extends BaseAdapter {
 
             viewHolder.txt1=convertView.findViewById(R.id.l_title);
             viewHolder.txt2=convertView.findViewById(R.id.l_adress);
+            viewHolder.txt3=convertView.findViewById(R.id.l_city);
+            viewHolder.txt4=convertView.findViewById(R.id.l_content);
+
             viewHolder.img1=convertView.findViewById(R.id.l_image);
 
             convertView.setTag(viewHolder);
@@ -65,7 +68,9 @@ public class LocationAdapter extends BaseAdapter {
             viewHolder = (ViewHolder) convertView.getTag();
         Location lc=mlocations.get(position);
         viewHolder.txt1.setText(lc.getlTitle());
-        viewHolder.txt2.setText(lc.getlThanhpho());
+        viewHolder.txt3.setText(lc.getlThanhpho());
+        viewHolder.txt4.setText(lc.getlContent());
+        viewHolder.txt2.setText(lc.getlAdress());
         Picasso.with(mcontext).load(lc.getlImageMain()).into(viewHolder.img1);
 
 
