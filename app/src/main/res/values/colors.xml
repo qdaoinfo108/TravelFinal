@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="colorBlack">#000</color>
+    <color name="colorBlueFlat">#3498db</color>
+    <color name="colorDarkWhile">#dfe6e9</color>
+    <color name="colorWhile">#FFFFFF</color>
+    <color name="colorBackgroundNav">#74b9ff</color>
+    <color name="colorTextNav">#2d3436</color>
+
+    <!-- login -->
+    <color name="white">#FFFFFF</color>
+    <color name="transparent">#00000000</color>
+    <color name="gradStart">#19AA8B</color>
+    <color name="gradStop">#23A7D8</color>
+
+</resources>

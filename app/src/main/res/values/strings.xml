@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">TravelFinal</string>
+    <string name="nav_home">Trang chủ</string>
+    <string name="nav_location">Điểm đến</string>
+    <string name="nav_food">Ăn,uống</string>
+    <string name="nav_trans">Phương tiện</string>
+    <string name="nav_person">Người dùng</string>
+    <string name="more">Xem tất cả</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>
