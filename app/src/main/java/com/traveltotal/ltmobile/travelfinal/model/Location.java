@@ -15,12 +15,13 @@ public class Location {
     private String lImg3;
     private String lImg4;
 
-    public Location(String lThanhpho, String lImageMain, String lTitle, String lAdress, String lContent) {
+    public Location(String lThanhpho, String lImageMain, String lTitle, String lAdress, String lContent,int lRate) {
         this.lThanhpho = lThanhpho;
         this.lImageMain = lImageMain;
         this.lTitle = lTitle;
         this.lAdress = lAdress;
         this.lContent = lContent;
+        this.lRate = lRate;
     }
 
     public int getId_location() {

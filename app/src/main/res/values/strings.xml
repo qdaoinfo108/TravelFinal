@@ -6,7 +6,7 @@
     <string name="nav_trans">Phương tiện</string>
     <string name="nav_person">Người dùng</string>
     <string name="more">Xem tất cả</string>
-
+    <string name="nulll"></string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

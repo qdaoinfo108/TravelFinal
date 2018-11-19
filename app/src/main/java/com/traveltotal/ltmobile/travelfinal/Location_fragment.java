@@ -3,12 +3,14 @@ package com.traveltotal.ltmobile.travelfinal;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -36,17 +38,15 @@ import com.traveltotal.ltmobile.travelfinal.model.Location;
 public class Location_fragment extends Fragment {
 
 
-    private static final String theURL = "http://192.168.1.78/test.php";
+    private static final String theURL = "https://traveltotal.000webhostapp.com/diemden2.php";
 
 
-    private ListView recyclerView;
-    //bạn dùng rycleviwr thì mình ko rõ chứ mình dùng view thôi nhe
-   private View rootView;
+    private ListView listView;
+    private View rootView;
     private LocationAdapter mLocationAdapter;
     private RequestQueue mRequestQueue;
     private ArrayList<Location> listItem;
     private Context context;
-    private int dem = 0;
 
     public Location_fragment() {
         // Required empty public constructor
@@ -63,19 +63,19 @@ public class Location_fragment extends Fragment {
         // tao doi tuong View => return view
         rootView = inflater.inflate(R.layout.fragment_location_fragment, container, false);
         AnhXa();
-
-
         listItem = new ArrayList<>();
         //cái này nó chạy cục bộ ,bỏ vô chạy cho khỏe
         mRequestQueue = Volley.newRequestQueue(getActivity());
         loadRecyclerViewData();
-
+        sendData();
         return rootView;
     }
-    private void AnhXa(){
+
+    private void AnhXa() {
         //treen fragmen nay co bao nhieu thu can phai anh xa ?
-        recyclerView=rootView.findViewById(R.id.rcLocation);
+        listView = rootView.findViewById(R.id.rcLocation);
     }
+
     private void loadRecyclerViewData() {
 
         final ProgressDialog progressDialog = new ProgressDialog(getActivity());
@@ -94,30 +94,46 @@ public class Location_fragment extends Fragment {
                                         jsonObject.getString("HINHANH"),
                                         jsonObject.getString("TITLE"),
                                         jsonObject.getString("DIACHI"),
-                                        jsonObject.getString("CONTENT"));
+                                        jsonObject.getString("CONTENT"),
+                                        jsonObject.getInt("DANHGIA"));
                                 listItem.add(location);
-                            }
-                            catch (JSONException e) {
+                            } catch (JSONException e) {
                                 e.printStackTrace();
                             }
                         }
-
                         mLocationAdapter = new LocationAdapter(getActivity(), listItem);
-
                         // recyleview thì trên stackoverflow cũng có hướng dẫn set adapter cho riếng nó luôn nhé ,bạn run thử xem
-                        recyclerView.setAdapter(mLocationAdapter);
+                        listView.setAdapter(mLocationAdapter);
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                    Toast.makeText(getActivity(),error.toString(),Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), error.toString(), Toast.LENGTH_SHORT).show();
             }
         }
 
         );
-
         mRequestQueue.add(request);
+    }
 
+    private void sendData() {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // chuyen activity
+                Intent intent = new Intent(getActivity(), detail_location.class);
+                Location location1 = listItem.get(position);
+                intent.putExtra("TITLE", location1.getlTitle());
+                intent.putExtra("CITY", location1.getlThanhpho());
+                intent.putExtra("ADRESS", location1.getlAdress());
+                intent.putExtra("DANHGIA", location1.getlRate());
+                intent.putExtra("TITLE", location1.getlTitle());
+                intent.putExtra("HINHANH", location1.getlImageMain());
+                intent.putExtra("CONTENT",location1.getlContent());
+                startActivity(intent);
+                // something
 
+            }
+        });
     }
 }

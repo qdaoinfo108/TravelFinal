@@ -62,8 +62,10 @@
             android:text="đoạn text 1"
             android:layout_below="@id/l_content"
             android:layout_toEndOf="@id/l_image"
+            android:layout_marginLeft="5dp"
             android:textSize="@dimen/sizeAdress"
             android:gravity="right"
+            android:maxLines="2"
             android:layout_toRightOf="@id/l_image" />
 
 

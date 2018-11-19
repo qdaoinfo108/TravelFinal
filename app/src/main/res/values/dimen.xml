@@ -4,4 +4,5 @@
     <dimen name="sizeTitle">15dp</dimen>
     <dimen name="sizeContent">10dp</dimen>
     <dimen name="sizeAdress">8dp</dimen>
+    <dimen name="sizeHeightImage">250dp</dimen>
 </resources>
