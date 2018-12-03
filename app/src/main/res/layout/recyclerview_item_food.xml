@@ -1,66 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="wrap_content"
     android:layout_height="match_parent">
 
-    <!-- A CardView that contains a TextView -->
 
     <RelativeLayout
-        android:layout_width="fill_parent"
+        android:layout_width="200dp"
         android:layout_height="fill_parent"
         android:orientation="vertical"
         android:padding="5dp">
 
         <ImageView
-            android:id="@+id/l_image"
-            android:layout_width="170dp"
+            android:id="@+id/f_image"
+            android:layout_width="200dp"
             android:layout_height="120dp"
             android:scaleType="centerCrop"
+            android:src="@drawable/first_bg"
             />
-
-
         <TextView
-            android:id="@+id/l_title"
+            android:id="@+id/f_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@id/l_image"
-            android:layout_toRightOf="@id/l_image"
-            android:layout_marginLeft="10dp"
+            android:layout_below="@id/f_image"
+            android:layout_marginLeft="7dp"
             android:textColor="@android:color/holo_blue_dark"
             android:textSize="@dimen/sizeTitle"
             android:textStyle="bold"
-             />
+            android:text="aaaaaaaaaaaaaaaaaa"
+            />
         <TextView
-            android:id="@+id/l_city"
-            android:layout_width="match_parent"
+            android:id="@+id/f_city"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:text="đoạn text 1"
-            android:layout_below="@id/l_title"
-            android:layout_marginLeft="10dp"
-            android:layout_toEndOf="@id/l_image"
+            android:layout_below="@id/f_title"
+            android:layout_marginLeft="7dp"
             android:textSize="@dimen/sizeAdress"
-            android:layout_toRightOf="@id/l_image" />
+             />
         <TextView
-            android:id="@+id/l_content"
+            android:id="@+id/f_price"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text="đoạn text 1"
+            android:layout_below="@id/f_city"
+            android:layout_marginLeft="7dp"
+            android:textColor="@color/colorAccent"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:textSize="@dimen/sizeAdress"
+            />
+        <TextView
+            android:id="@+id/f_content"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/l_city"
-            android:layout_toEndOf="@id/l_image"
-            android:layout_toRightOf="@id/l_image"
-            android:layout_marginLeft="15dp"
-            android:maxLines="4"
+            android:layout_below="@+id/f_price"
+            android:layout_marginLeft="2dp"
+            android:maxLines="3"
             android:padding="5dp"
             android:text="Đặt cạnh đầu màn hình của view này tớĐặt cạnh đầu màn hình của view này tới cạnh cuối màn hình của view ID đã cho và phải là một tham chiếu tới resource khác, trong dạng "
             android:textColor="@android:color/black"
             android:textSize="@dimen/sizeContent" />
         <TextView
-            android:id="@+id/l_adress"
+            android:id="@+id/f_adress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="đoạn text 1"
-            android:layout_below="@id/l_content"
-            android:layout_toEndOf="@id/l_image"
+            android:layout_below="@id/f_content"
             android:layout_marginLeft="5dp"
             android:textSize="@dimen/sizeAdress"
             android:gravity="right"

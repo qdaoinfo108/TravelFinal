@@ -24,6 +24,7 @@ public class home_first extends AppCompatActivity {
     //khai bao fragment
     private Location_fragment location_fragment;
     private food_fragment food_fragment;
+    private person_fragment person_fragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +37,7 @@ public class home_first extends AppCompatActivity {
 
         location_fragment = new Location_fragment();
         food_fragment = new food_fragment();
-
+        person_fragment = new person_fragment();
         // thay doi mau khi bam vao nav
         mMainNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -60,8 +61,8 @@ public class home_first extends AppCompatActivity {
                         //setFragment
                         return true;
                     case id.nav_person:
-                        mMainNav.setItemBackgroundResource(color.colorBlueFlat);
-                        //setFragment(loginFragment);
+                        mMainNav.setItemBackgroundResource(color.colorPrimaryDark);
+                        setFragment(person_fragment);
                         return true;
 
                     default:

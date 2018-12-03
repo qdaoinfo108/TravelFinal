@@ -5,11 +5,13 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_foreground"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -22,7 +24,16 @@
             </intent-filter>
         </activity>
         <activity android:name=".home_first" />
-        <activity android:name=".detail_location"></activity>
+        <activity android:name=".detail_location" />
+        <activity
+            android:name=".detail_sos_person"
+            android:label="@string/title_activity_detail_sos_person"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".detail_about_person"
+            android:label="@string/title_activity_person_about"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".detail_report_person"></activity>
     </application>
 
 </manifest>

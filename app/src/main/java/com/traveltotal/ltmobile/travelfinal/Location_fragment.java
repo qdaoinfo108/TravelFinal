@@ -6,12 +6,15 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 
@@ -39,8 +42,7 @@ public class Location_fragment extends Fragment {
 
 
     private static final String theURL = "https://traveltotal.000webhostapp.com/diemden2.php";
-
-
+    private SearchView editsearch;
     private ListView listView;
     private View rootView;
     private LocationAdapter mLocationAdapter;
@@ -129,11 +131,12 @@ public class Location_fragment extends Fragment {
                 intent.putExtra("DANHGIA", location1.getlRate());
                 intent.putExtra("TITLE", location1.getlTitle());
                 intent.putExtra("HINHANH", location1.getlImageMain());
-                intent.putExtra("CONTENT",location1.getlContent());
+                intent.putExtra("CONTENT", location1.getlContent());
                 startActivity(intent);
                 // something
 
             }
         });
     }
+
 }
